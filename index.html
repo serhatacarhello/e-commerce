@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- json proviewer platzi -->
+</head>
+
+<body>
+    <div class="header-container">
+        <header>
+            <h1>E-Ticaret</h1>
+            <input type="text" name="search_product-input" id="search_product-input" placeholder="Ürün ismi giriniz..."/>
+
+            <div class="btn-container flex">
+                <button id="open-btn">Sepet</button>
+                <button id="sign_in-btn">Kayıt Ol</button>
+                <button>Giriş Yap</button>
+            </div>
+        </header>
+
+        <main>
+            <!-- categories -->
+            <div class="category-wrapper">
+                <h2>Kategoriler</h2>
+                <div class="categories"></div>
+            </div>
+
+            <!-- products -->
+            <div class="product-wrapper">
+                <h2>Ürünler</h2>
+                <div class="products"></div>
+            </div>
+
+            <div class="modal-wrapper">
+                <div class="modal">
+                    <img id="close-btn" src="images/close.png" />
+                    <h2 class="modal-title">Sepetinizdeki Ürünler</h2>    
+
+                    <div class="modal-list"></div>
+
+                    <div class="total">
+                        Toplam:
+                        <span id="modal-info">5000</span>$
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
