@@ -13,4 +13,7 @@ CSS3
 JavaScript (ES6+)
 Fetch API
 
+![e-commerce-project](/images/e-commerce-api.gif)
+
+
 Thanks

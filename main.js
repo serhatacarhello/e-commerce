@@ -5,6 +5,9 @@ const openBtn = document.querySelector("#open-btn");
 const closeBtn = document.querySelector("#close-btn");
 const modalList = document.querySelector(".modal-list");
 const modalInfo = document.querySelector("#modal-info");
+const searchInput = document.querySelector("#search_product-input");
+const searchBtn = document.querySelector(".search-button");
+const searchValue = searchInput.value.toLowerCase();
 
 document.addEventListener("DOMContentLoaded", () => {
   // callback  > içerisinde farkli fonksiyonları caliştirir
@@ -20,7 +23,7 @@ function fetchCategories() {
 
     // işlenen veriyi ekrana basma
     .then((data) =>
-      data.slice(0, 5).forEach((category) => {
+      data.slice(0, 4).forEach((category) => {
         // console.log(category);
 
         const { image, name } = category; // constructor örneği
@@ -28,7 +31,7 @@ function fetchCategories() {
         categoryDiv.classList.add("category");
         categoryDiv.innerHTML = `
              <img src="${image}" alt="${name}">
-             <span>${name} </span>
+             <span class="category-name">${name}</span>
             `;
         // oluşan divi html deki listeye ekleme
         categoryList.appendChild(categoryDiv);
@@ -44,13 +47,13 @@ function fetchProduct() {
   fetch("https://api.escuelajs.co/api/v1/products")
     .then((res) => res.json())
     .then((data) =>
-      data.slice(0, 25).forEach((product) => {
+      data.slice(5, 25).forEach((product) => {
         // console.log(product);
         const productDiv = document.createElement("div");
         productDiv.classList.add("product");
         productDiv.innerHTML = `
         <img src="${product.images[0]} " alt="${product.title}">
-        <p>${product.title} </p>
+        <p class="product-title">${product.title} </p>
         <p>${product.category.name} </p>
         <div class="product-action">
             <p class="price">$ ${product.price}</p>
@@ -99,7 +102,7 @@ closeBtn.addEventListener("click", () => {
 
 function addList() {
   basket.forEach((basketItem) => {
-    console.log(basketItem)
+    console.log(basketItem);
     const listItem = document.createElement("div");
     listItem.classList.add("list-item");
     //içeriğini değiştir

@@ -6,16 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Commerce</title>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
-    <!-- json proviewer platzi -->
 </head>
 
 <body>
     <div class="header-container">
         <header>
             <h1>E-Ticaret</h1>
-            <input type="text" name="search_product-input" id="search_product-input" placeholder="Ürün ismi giriniz..."/>
-
+            <div class="search">
+                <input type="text" name="search_product-input" id="search_product-input"
+                    placeholder="Ürün ismi giriniz..." />
+                <button class="search-button"><i class="fa-solid fa-search"></i></button>
+            </div>
             <div class="btn-container flex">
                 <button id="open-btn">Sepet</button>
                 <button id="sign_in-btn">Kayıt Ol</button>
@@ -39,14 +45,15 @@
             <div class="modal-wrapper">
                 <div class="modal">
                     <img id="close-btn" src="images/close.png" />
-                    <h2 class="modal-title">Sepetinizdeki Ürünler</h2>    
+                    <h2 class="modal-title">Sepetinizdeki Ürünler</h2>
+
+                    <div class="total">
+                        Toplam:&nbsp;
+                        <span id="modal-info">5000</span>&nbsp;$
+                    </div>
 
                     <div class="modal-list"></div>
 
-                    <div class="total">
-                        Toplam:
-                        <span id="modal-info">5000</span>$
-                    </div>
                 </div>
 
             </div>

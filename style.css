@@ -37,8 +37,36 @@ header input {
 }
 
 header input:focus {
-    background-color: blue;
-    color: white;
+    background-color: rgb(15, 20, 15);
+    color: rgb(255, 255, 255);
+}
+
+.search {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.search-button {
+    background-color:transparent;
+    border: none;
+    color: #080cf8;
+    font-size: 33px;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .search-button:hover {
+   scale: 1.2;
+  }
+
+header input:focus-within + .search-button{
+    display: none;
 }
 
 header .btn-container {
@@ -59,7 +87,7 @@ header .btn-container button {
 
 
 header .btn-container button:nth-child(1){
-    background-color: #f5ebeb;
+    background-color: #15bb1d;
 margin-left: 1rem;
 }
 header .btn-container button:nth-child(2){
@@ -68,6 +96,12 @@ header .btn-container button:nth-child(2){
 header .btn-container button:nth-child(3){
     background-color: #eb0d74;
 }
+
+header .btn-container button:hover {
+    filter: hue-rotate(720deg);
+    transition: all .3s ease;
+}
+
 
 .category-wrapper {
     padding: 0 0 3rem;
@@ -91,6 +125,7 @@ header .btn-container button:nth-child(3){
 
 .category {
     max-width: calc(100% / 3);
+    height: 100%;
     display: flex;
     flex-direction: column;    
     align-items: center;
@@ -113,6 +148,10 @@ header .btn-container button:nth-child(3){
     min-width: min-content;
     padding: calc(1vw);
    font-weight: bold;
+}
+
+.category span:hover {    
+    filter: brightness(80%);    
 }
 
 .product-wrapper {
@@ -147,26 +186,29 @@ background-color: hsl(0, 16%, 96%);
     box-shadow: 4px 7px 10px black;
     color: white;
     background-color: #993bf1;
+    position: relative;
 }
 
 .product img {
     width: 100%;
-    display: block;
+    height: auto;
+    display:inline-block;
     border-radius: 1rem;
-
 }
 
 .product-action {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: black;
-    width: 85%;
+    background-color: transparent;
+    width: 95%;
     padding: .5rem;
     padding-left: 1rem;
     color: #fff;
     border-radius: 1rem;
     font-size: 1.2rem;
+    position: absolute;
+    top: 88%;
 }
 
 .product-action button.addBtn {
@@ -205,6 +247,8 @@ background-color: hsl(0, 16%, 96%);
     text-align: center;
     background-color: #59f13b;
     padding: .5rem 0;
+    position: relative;
+    transform: translateY(-3rem);
 }
 
 .modal {
@@ -222,6 +266,7 @@ background-color: hsl(0, 16%, 96%);
     width: 3rem;
     align-self: flex-end;
     padding: 5px;
+    z-index: 3;
 }
 
 .active {
@@ -272,7 +317,8 @@ color: red;
     color: white;
     padding: 1rem;
     width: 100%;
-    position: relative;        
+    position: relative; 
+    transform: translateY(-3rem);
 }
 
 .total span {
